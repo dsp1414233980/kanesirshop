@@ -1,0 +1,85 @@
+$RoseQuartz:rgb(247, 202, 201);
+$Serenity:#91A8D0;
+ #goodscard{
+    height: 40em;
+    .panel-static{
+        height: 80%;
+        align-items:flex-start;
+
+    }
+    .panel{
+        .panel-content{
+            padding: 1em;
+            width: 45%;
+            height: 100%;
+            margin-left: 3%;
+            position: relative;
+            h1{
+                color: $RoseQuartz;
+            }
+            h2{
+                color: white;
+            }
+            p{
+                // color: $Serenity;
+                font-size: 1.2em;
+
+            }
+            .typename{
+                font-size:1em;
+                color:$Serenity;
+                display: inline-block;
+                span{
+                    padding: 0 0.5em;
+                    margin-left: 0.5em;
+                    border:1px solid $Serenity;
+                }
+            }
+            .bottom{
+                position: absolute;
+                bottom: 4.5em;
+                left: 1em;
+                p{
+                    color: $RoseQuartz;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 1.5em;
+                    margin-left: 0.5em;
+                }
+                .favorite{
+                    font-size: 0.6em;
+                    margin-bottom: 1em;
+                    margin-left: 1em;
+                }
+                .cat{
+                    margin-left: 2em;
+                }
+            }
+        }
+        .panel-sliding{
+            left:54%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+ }
+ #request{
+    height: 15em;
+    .wrapper{
+        padding: 1em;
+        h2{
+            color: $Serenity;
+        }
+        textarea{
+            display: block;
+        }
+
+        #falsepass{
+            margin-top: 1em;
+            padding: 1em;
+            background-color: $Serenity;
+        }
+    }
+ }

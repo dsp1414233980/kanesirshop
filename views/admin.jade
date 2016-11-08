@@ -1,0 +1,85 @@
+extends admin-layout
+
+block content
+	div#page-wrapper
+		div.row
+			div.col-lg-12
+				h1#page-header.page-header 订单详情
+		div#main.row
+			div.col-lg-3.col-md-6
+				div.panel.panel-warning
+					div.panel-heading
+						div.row
+							div.col-xs-3
+								i.fa.fa-comments.fa-5x
+							div.col-xs-9.text-right
+								div.huge 26
+								div 正在出售
+					a(href="#")
+						div.panel-footer
+							span.pull-left 查看详情
+							span.pull-right
+								i.fa.fa-arrow-circle-right
+							div.clearfix
+			div.col-lg-3.col-md-6
+				div.panel.panel-success
+					div.panel-heading
+						div.row
+							div.col-xs-3
+								i.fa.fa-comments.fa-5x
+							div.col-xs-9.text-right
+								div.huge 26
+								div 申请中订单
+					a(href="#")
+						div.panel-footer
+							span.pull-left 查看详情
+							span.pull-right
+								i.fa.fa-arrow-circle-right
+							div.clearfix
+			div.col-lg-3.col-md-6
+				div.panel.panel-danger
+					div.panel-heading
+						div.row
+							div.col-xs-3
+								i.fa.fa-comments.fa-5x
+							div.col-xs-9.text-right
+								div.huge 26
+								div 物流订单
+					a(href="#")
+						div.panel-footer
+							span.pull-left 查看详情
+							span.pull-right
+								i.fa.fa-arrow-circle-right
+							div.clearfix
+			div.col-lg-3.col-md-6
+				div.panel.panel-info
+					div.panel-heading
+						div.row
+							div.col-xs-3
+								i.fa.fa-comments.fa-5x
+							div.col-xs-9.text-right
+								div.huge 26
+								div 申诉订单
+					a(href="#")
+						div.panel-footer
+							span.pull-left 查看详情
+							span.pull-right
+								i.fa.fa-arrow-circle-right
+							div.clearfix
+	//- 模态框
+	div#addClassModal.modal.fade
+		div.modal-dialog
+			div.modal-content
+				div.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true") &times;
+						span.sr-only 关闭
+					h4 添加分类信息
+				div.modal-body
+					from(role="form")
+						div#addClassFrom.form-group
+							label(for="InputTitle") 分类标题
+							input#classTitle.form-control(type="text",placeholder="请输入分类标题")
+				div.modal-footer
+					button.btn.btn-default(type="button",data-dismiss="modal") 取消
+					button#confirmAddClass.btn.btn-primary(type="button") 确认

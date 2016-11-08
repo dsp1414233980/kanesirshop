@@ -1,0 +1,168 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+		script(src="/lib/jquery/dist/jquery.js")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a.active(href="/",alt="首页") 首页
+					li
+						a(href="#",alt="我要拍卖") 我要拍卖
+				fieldset.field-container
+					input.field(type="text",placeholder="搜索...")
+					div.icon-container
+						div.icon-search
+						div.icon-close
+							div.x-up
+							div.x-down
+				div.sign-in
+					div#button
+						a(href="/sign") 登录
+					div#button
+						i
+						a(href="#") 购物车
+			div.mainlist
+				//- 侧边分类
+				div.aside
+					div.aside-all
+						div.hd
+							h2
+								a
+									i
+									热门分类
+						div.bd
+							ul.aside-cList
+								li
+									div
+										a(href="#") 教材分类
+								li
+									div
+										a(href="#") 教材分类
+								li
+									div
+										a(href="#") 教材分类
+				//- 主体最新发布商品
+				div.main#main
+					//- 标题
+					div.wrap
+						h2 搜索结果
+					//- 商品
+					div.new-list#items
+						ul.itemlist
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="/good",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+							li
+								div.itembox
+									a(href="#",target="_blank")
+										img.itemimg(src="")
+								div.iteminfor
+									h2.iteminfor-h2
+										a(href="",target="_blank") 一二三四五六七八
+									div.timeandtag
+										div.cf
+											dl
+												dd
+													em time
+										div.cf
+											div.itemicon-box
+												a(href="") tag
+					//- 分页
+					div#page-nav
+						ul.pages
+							li.pgNext.pgEmpty 首页
+							li.pgNext.pgEmpty 上一页
+							li.pgNumber.pgCurrent 1
+							li.pgNumber 2
+							li.thpoint ...
+							li.pgNext 下一页
+							li.pgNext 末页
+							li.thpoint.pagetotal 共6页
+							li.thpoint.pagenow
+								input#gotoval(value="1",maxlength="6",type="text") 
+							li.pgNext.go 确定
+
+
+			footer
+		//- script(src="/js/index.js")

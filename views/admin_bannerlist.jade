@@ -1,0 +1,56 @@
+extends admin-layout
+
+block content
+	div#page-wrapper
+			div.row
+				div.col-lg-12
+					h1#page-header.page-header 轮播页列表
+			div
+				a.btn.addClass.btn-info.btn-lg(href="/admin/uploadbanner") 添加轮播页
+				table.table.table-hover
+					thead
+						tr
+							th ID
+							th 轮播简介
+							th 创建时间
+							th 图片详情
+							th 操作
+					tbody
+						each item in data
+							tr
+								td #{item.banner_id}
+								td #{item.banner_summary}
+								td #{item.banner_create_time}
+								td 
+									button.btn.btn-primary.btn-xs(type="button") 查看图片
+								td
+									button.btn.btn-primary.btn-xs(type="button") 查看
+									button.btn.btn-danger.btn-xs(type="button") 删除分类
+		//- 删除模态框
+		div#showImageModal.modal.fade
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button.close(type="button",data-dismiss="modal")
+							span(aria-hidden="true") &times;
+							span.sr-only 关闭
+						h4 查看
+					div.modal-body
+						img
+					div.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") 取消
+						button#confirmAddClass.btn.btn-danger(type="button") 确认
+		//- 图片详情
+		div#deleteItemModal.modal.fade
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button.close(type="button",data-dismiss="modal")
+							span(aria-hidden="true") &times;
+							span.sr-only 关闭
+						h4 警告
+					div.modal-body
+						h3 确定删除该条轮播吗？如果删除将不可恢复！
+					div.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") 取消
+						button#confirmAddClass.btn.btn-danger(type="button") 确认

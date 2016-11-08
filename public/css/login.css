@@ -1,0 +1,210 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  background: #ea5c54;
+  background: -moz-linear-gradient(-45deg, #ea5c54 0%, #bb6dec 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #ea5c54), color-stop(100%, #bb6dec));
+  background: -webkit-linear-gradient(-45deg, #ea5c54 0%, #bb6dec 100%);
+  background: -o-linear-gradient(-45deg, #ea5c54 0%, #bb6dec 100%);
+  background: -ms-linear-gradient(-45deg, #ea5c54 0%, #bb6dec 100%);
+  background: linear-gradient(135deg, #ea5c54 0%, #bb6dec 100%); }
+
+.login {
+  position: absolute;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 0.85);
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-property: opacity, box-shadow, top, left, -webkit-transform;
+  transition-property: opacity, box-shadow, top, left, -webkit-transform;
+  transition-property: transform, opacity, box-shadow, top, left;
+  transition-property: transform, opacity, box-shadow, top, left, -webkit-transform;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 161px 100%;
+  transform-origin: 161px 100%;
+  background: #35394a;
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, #1f222e));
+  background: -webkit-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  height: 340px;
+  margin: auto;
+  padding: 100px 40px 40px 40px;
+  opacity: 1;
+  border-top: 2px solid #d8312a;
+  border-radius: 5px; }
+  .login .validation {
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 6px;
+    opacity: 0; }
+
+.login-title {
+  font-size: 16px;
+  height: 60px;
+  text-align: left;
+  color: #afb1be; }
+
+.login-fields {
+  position: absolute;
+  left: 0;
+  height: 208px; }
+  .login-fields .icon {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 36px;
+    opacity: .5; }
+  .login-fields input[type='password'] {
+    color: #dc6180 !important; }
+  .login-fields input[type="text"], .login-fields input[type='password'] {
+    left: 0;
+    width: 190px;
+    margin-top: -2px;
+    padding: 10px 65px;
+    color: #afb1be;
+    border-top: 2px solid #393d52;
+    border-right: none;
+    border-bottom: 2px solid #393d52;
+    border-left: none;
+    outline: none;
+    background: #32364a;
+    box-shadow: none; }
+
+.login-fields-user, .login-fields-password {
+  position: relative; }
+
+.login-fields-submit {
+  position: relative;
+  top: 35px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: auto; }
+  .login-fields-submit input {
+    font-size: 11px;
+    padding: 10px 50px;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-property: background, color;
+    transition-property: background, color;
+    text-transform: uppercase;
+    color: #dc6180;
+    border: 2px solid #dc6180;
+    border-radius: 50px;
+    background: transparent; }
+    .login-fields-submit input:focus {
+      outline: none;
+      box-shadow: none; }
+    .login-fields-submit input:hover {
+      cursor: pointer;
+      -webkit-transition-duration: .2s;
+      transition-duration: .2s;
+      -webkit-transition-property: background, color;
+      transition-property: background, color;
+      color: white;
+      background: #dc6180; }
+
+.disclaimer {
+  position: absolute;
+  bottom: 50px;
+  left: 35px;
+  width: 250px; }
+  .disclaimer p {
+    color: #afb1be;
+    font-size: 11px; }
+
+.bg-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+  .bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    bottom: -160px;
+    -webkit-animation: square 25s infinite;
+    animation: square 25s infinite;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear; }
+    .bg-bubbles li:nth-child(1) {
+      left: 10%; }
+    .bg-bubbles li:nth-child(2) {
+      left: 20%;
+      width: 80px;
+      height: 80px;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+      -webkit-animation-duration: 17s;
+      animation-duration: 17s; }
+    .bg-bubbles li:nth-child(3) {
+      left: 25%;
+      -webkit-animation-delay: 4s;
+      animation-delay: 4s; }
+    .bg-bubbles li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      -webkit-animation-duration: 22s;
+      animation-duration: 22s;
+      background-color: rgba(255, 255, 255, 0.25); }
+    .bg-bubbles li:nth-child(5) {
+      left: 70%; }
+    .bg-bubbles li:nth-child(6) {
+      left: 80%;
+      width: 120px;
+      height: 120px;
+      -webkit-animation-delay: 3s;
+      animation-delay: 3s;
+      background-color: rgba(255, 255, 255, 0.2); }
+    .bg-bubbles li:nth-child(7) {
+      left: 32%;
+      width: 160px;
+      height: 160px;
+      -webkit-animation-delay: 7s;
+      animation-delay: 7s; }
+    .bg-bubbles li:nth-child(8) {
+      left: 55%;
+      width: 20px;
+      height: 20px;
+      -webkit-animation-delay: 15s;
+      animation-delay: 15s;
+      -webkit-animation-duration: 40s;
+      animation-duration: 40s; }
+    .bg-bubbles li:nth-child(9) {
+      left: 25%;
+      width: 10px;
+      height: 10px;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+      -webkit-animation-duration: 40s;
+      animation-duration: 40s;
+      background-color: rgba(255, 255, 255, 0.3); }
+    .bg-bubbles li:nth-child(10) {
+      left: 90%;
+      width: 160px;
+      height: 160px;
+      -webkit-animation-delay: 11s;
+      animation-delay: 11s; }
+
+@-webkit-keyframes square {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(-700px) rotate(600deg);
+    transform: translateY(-700px) rotate(600deg); } }
+
+/*# sourceMappingURL=login.css.map */

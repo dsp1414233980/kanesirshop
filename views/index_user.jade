@@ -1,0 +1,40 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+		link(rel="stylesheet",href="/lib/swiper/css/swiper-3.3.1.min.css")
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/lib/swiper/js/swiper-3.3.1.jquery.min.js")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a.active(href="/",alt="首页") 首页
+					li
+						a(href="/upload",alt="我要拍卖") 我要拍卖
+				fieldset.field-container
+					input.field(type="text",placeholder="搜索...")
+					div.icon-container
+						div.icon-search
+						div.icon-close
+							div.x-up
+							div.x-down
+				div.sign-in
+						div#button
+							a(href="/user") #{username}
+						div#button
+							i
+							a(href="/cat") 购物车
+			div.card
+			footer
+		script(src="/js/index.js")
+
+
+		

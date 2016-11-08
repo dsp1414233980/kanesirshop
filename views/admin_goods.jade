@@ -1,0 +1,41 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a(href="/admin/requestlist") 返回
+			div.card#goodscard
+				div.panel.panel-static
+					div.panel-content
+						h1 #{data.goods_title}
+						a.typename(href="/")
+							span #{data.type_name}
+							//- span #{data.type_name}
+						h2 商品描述：
+						p #{data.goods_summary}
+						div.bottom
+							p KB #{data.goods_price}
+							p.favorite 收藏宝贝
+							input#id(type="hidden",name="reason",value="#{data.goods_id}")
+							button#pass.btn.btn-primary 审核通过
+							
+					div.panel.panel-sliding
+							img(src="#{data.goods_img}")
+			div.card#request
+				div.wrapper
+					h2 如果审核未通过，请填写未通过原因
+					textarea#reason(row="3",cols="50",placeholder="请注明原因")
+					button#falsepass.btn.btn-primary 审核未通过
+			footer
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/js/inputgoods.js")

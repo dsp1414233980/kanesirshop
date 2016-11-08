@@ -1,0 +1,42 @@
+extends admin-layout
+
+block content
+	div#page-wrapper
+			div.row
+				div.col-lg-12
+					h1#page-header.page-header 分类信息
+			div
+				button.btn.addClass.btn-info.btn-lg(type="button") 添加分类
+				table.table.table-hover
+					thead
+						tr
+							th ID
+							th 分类名称
+							th 宝贝数量
+							th 操作
+					tbody
+						each item in data
+							tr
+								td #{item.type_id}
+								td #{item.type_name}
+								td
+									a#typecount 查看
+								td
+									button.btn.btn-danger.btn-xs(type="button") 删除分类
+		//- 模态框
+		div#addClassModal.modal.fade
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button.close(type="button",data-dismiss="modal")
+							span(aria-hidden="true") &times;
+							span.sr-only 关闭
+						h4 添加分类信息
+					div.modal-body
+						from(role="form")
+							div#addClassFrom.form-group
+								label(for="InputTitle") 分类标题
+								input#classTitle.form-control(type="text",placeholder="请输入分类标题")
+					div.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") 取消
+						button#confirmAddClass.btn.btn-primary(type="button") 确认

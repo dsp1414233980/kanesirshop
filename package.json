@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "formidable": "^1.0.17",
+    "hiredis": "^0.5.0",
+    "jade": "^1.11.0",
+    "moment": "^2.15.2",
+    "multer": "^1.2.0",
+    "orm": "^3.1.0",
+    "redis": "^2.6.3",
+    "serve-static": "^1.11.1",
+    "uploadify": "^1.0.7"
+  }
+}

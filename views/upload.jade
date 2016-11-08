@@ -1,0 +1,44 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a(href="/",alt="首页") 首页
+				fieldset.field-container
+					input.field(type="text",placeholder="搜索...")
+					div.icon-container
+						div.icon-search
+						div.icon-close
+							div.x-up
+							div.x-down
+			div.card#uploadcard
+				div.panel.panel-static
+					div.panel-content.uploadsummary
+						h1.panel-heading.uploadtitle 手里有二手货？赶快拍卖吧！
+						p.panel-copy.uploaddescription 方便快捷的校园二手交易平台
+					div.panel.panel-sliding
+						div.panel-content.signup
+							h1.panel-heading 添加拍卖
+							form#upload
+								input.input#title(type="text",placeholder="请输入你想拍卖的标题")
+								input.input#price(type="text",placeholder="请输入价格")
+								select.input#tag
+									each item in data
+										option(value="#{item.type_name}") #{item.type_name}
+								textarea.input#summary(row="3",cols="30")
+								input#imgfile(type="file" name="tmpFile")
+								p 当前只支持jpg、jpeg、gif和png格式的上传，并且只能上传一张
+							button#fileuploader.btn.btn-primary 确认无误，上传
+			footer
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/js/upload.js")

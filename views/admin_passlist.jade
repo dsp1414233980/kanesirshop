@@ -1,0 +1,42 @@
+extends admin-layout
+
+block content
+	div#page-wrapper
+			div.row
+				div.col-lg-12
+					h1#page-header.page-header 审核成功订单
+			div.row
+				table.table.table-hover
+					thead
+						tr
+							th 商品ID
+							th 标题
+							th 所属分类
+							th 上架时间
+							th 查看
+					tbody
+						each item in data
+							tr
+								td #{item.goods_id}
+								td #{item.goods_title}
+								td #{item.type_name}
+								td #{item.goods_update_time}
+								td
+									a(href="/index/goods/{#{item.goods_id}").btn.btn-danger.btn-xs 查看
+		//- 模态框
+		div#addClassModal.modal.fade
+			div.modal-dialog
+				div.modal-content
+					div.modal-header
+						button.close(type="button",data-dismiss="modal")
+							span(aria-hidden="true") &times;
+							span.sr-only 关闭
+						h4 添加分类信息
+					div.modal-body
+						from(role="form")
+							div#addClassFrom.form-group
+								label(for="InputTitle") 分类标题
+								input#classTitle.form-control(type="text",placeholder="请输入分类标题")
+					div.modal-footer
+						button.btn.btn-default(type="button",data-dismiss="modal") 取消
+						button#confirmAddClass.btn.btn-primary(type="button") 确认

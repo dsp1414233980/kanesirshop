@@ -1,0 +1,106 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+		link(rel="stylesheet",href="/lib/swiper/css/swiper-3.3.1.min.css")
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/lib/swiper/js/swiper-3.3.1.jquery.min.js")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a.active(href="/",alt="首页") 首页
+					li
+						a(href="/upload",alt="我要拍卖") 我要拍卖
+				fieldset.field-container
+					input.field(type="text",placeholder="搜索...")
+					div.icon-container
+						div.icon-search
+						div.icon-close
+							div.x-up
+							div.x-down
+				div.sign-in
+					if login == 0
+						div#button
+							a(href="/sign") 登录|注册
+						div#button
+							i
+							a(href="/cat") 购物车
+					else
+						div#button
+							a(href="/user/#{username}") #{username}
+						div#button
+							i
+							a(href="/cat") 购物车
+			div.card.swiper-container
+				div.swiper-wrapper
+					each item in banner
+						div.swiper-slide(style="background:url(#{item.banner_img}) center/cover;") 
+				div.swiper-pagination
+			div.mainlist
+				//- 侧边分类
+				div.aside
+					div.aside-all
+						div.hd
+							h2
+								a
+									i
+									热门分类
+						div.bd
+							ul.aside-cList
+								each item in type
+									li
+										div
+											a(href="#") #{item.type_name}
+				//- 主体最新发布商品
+				div.main#main
+					//- 标题
+					div.wrap
+						h2 最新发布
+					//- 商品
+					div.new-list#items
+						ul.itemlist
+							each item in goods
+								li
+									div.itembox
+										a(href="/goods/#{item.goods_id}",target="_blank")
+											img.itemimg(src="#{item.goods_img}")
+									div.iteminfor
+										h2.iteminfor-h2
+											a(href="/goods/#{item.goods_id}",target="_blank") #{item.goods_title}
+										div.timeandtag
+											div.cf
+												dl
+													dd
+														em #{item.goods_update_time}
+											div.cf
+												div.itemicon-box
+													a(href="") #{item.type_name}
+					//- 分页
+					div#page-nav
+						ul.pages
+							li.pgNext.pgEmpty 首页
+							li.pgNext.pgEmpty 上一页
+							li.pgNumber.pgCurrent 1
+							li.pgNumber 2
+							li.thpoint ...
+							li.pgNext 下一页
+							li.pgNext 末页
+							li.thpoint.pagetotal 共6页
+							li.thpoint.pagenow
+								input#gotoval(value="1",maxlength="6",type="text") 
+							li.pgNext.go 确定
+
+
+			footer
+		script(src="/js/index.js")
+
+
+		

@@ -1,0 +1,52 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a(href="/",alt="首页") 首页
+				fieldset.field-container
+					input.field(type="text",placeholder="搜索...")
+					div.icon-container
+						div.icon-search
+						div.icon-close
+							div.x-up
+							div.x-down
+			div.card#sign
+				div.panel.panel-static
+					div#notice-login.panel-content.left
+						h1.panel-heading 还没有账户？
+						p.panel-copy 如果你还没有账户的话，请快来注册我们吧，kanesir.校园二手期待着您的加入
+						button.btn.btn-secondary.signup(type="button") 注册
+					div#notice-signin.panel-content.right
+						h1.panel-heading.notice-h1 已经有账户了？
+						p.panel-copy 快来登录我们吧，更多活动等着你哟
+						button.btn.btn-secondary.login(type="button") 登录
+					div.panel.panel-sliding
+						div.panel-content.signup
+							h1.panel-heading 注册
+							form#signup
+								input#signin-username.input.input-name(type="text",placeholder="请输入您的用户名")
+								input#signin-email.input.input-email(type="text",placeholder="请输入您的电子邮箱")
+								input#signin-password.input.input-password(type="password",placeholder="请输入用户密码")
+								button#signin-submit.btn.btn-primary(type="button") 注册
+						div.panel-content.login
+							h1.panel-heading 登录
+							form#login
+								input#login-email.input.input-email(type="text",placeholder="请输入您的电子邮箱")
+								input#login-password.input.input-password(type="password",placeholder="请输入您的用户密码")
+								button#login-submit.btn.btn-primary(type="button") 登录
+								a(href="#") 忘记密码？
+			footer
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/lib/jquery.easing/js/jquery.easing.js")
+		script(src="/js/sign.js")

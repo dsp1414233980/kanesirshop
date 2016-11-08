@@ -1,0 +1,23 @@
+extends admin-layout
+
+block content
+	div#page-wrapper
+		div.row
+			div.col-lg-12
+				h1#page-header.page-header 正在申请中订单
+		div.row
+			table.table.table-hover
+				thead
+					tr
+						th ID
+						th 内容标题
+						th 创建时间
+						th 操作
+				tbody
+					each item in data
+						tr
+							td #{item.goods_id}
+							td #{item.goods_title}
+							td #{item.goods_create_time}
+							td
+								a.btn.btn-danger.btn-xs(type="button",href="/admin/requestlist/goods/#{item.goods_id}") 审核

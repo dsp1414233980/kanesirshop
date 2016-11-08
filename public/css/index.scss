@@ -1,0 +1,521 @@
+@mixin bgtranstion {
+	-webkit-transition: background-color 1.25s ease-in-out;
+	-moz-transition: background-color 1.25s ease-in-out;
+	-o-transition: background-color 1.25s ease-in-out;
+    transition: background-color 1.25s ease-in-out;
+}
+@mixin fieldtranstion {
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+@mixin searchtranstion {
+	-webkit-transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+@mixin closetranstion {
+	-webkit-transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+	transition: opacity 0.25s ease, transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1), -webkit-transform 0.43s cubic-bezier(0.694, 0.048, 0.335, 1);
+}
+@mixin closert {
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	transform: rotate($deg);
+}
+@mixin translateX($X) {
+	-webkit-transform: translateX($X);
+	-moz-transform: translateX($X);
+	-o-transform: translateX($X);
+	transform: translateX($X);
+}
+@mixin positionR($position:relative) {
+	position: $position;
+}
+@mixin floatL($float: left) {
+	float: $float;  
+}
+$RoseQuartz:rgb(247, 202, 201);
+$Serenity:#91A8D0;
+$gary:#f9f9f9;
+$black:#000;
+$shadow:#d4d4d4;
+
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+body{
+    width: 100%;
+    background-color: $RoseQuartz;
+    background-image: url('/img/bg.png');
+    @include bgtranstion;
+    .page{
+    	max-width: 87%;
+    	min-width: 901px;
+    	margin: 5vh auto;
+	    background: $gary;
+	    border-radius: 10px;
+	    box-shadow: 0 0 20px 6px $shadow;
+	    height: auto;
+	    overflow:hidden;
+	    header{
+			padding: 2em 3em 0;
+    		height: 5em;
+    		#logo{
+    			@include floatL;
+    			width: 25%;
+    			img{
+    				width: 100%;
+    				height: 4em;
+    			}
+    		}
+    		.nav-item {
+    			@include floatL;
+    			margin-left: 1em;
+    			li{
+	    			height: 4em;
+	    			display: inline-block;
+	    			margin-right: 2em;
+	    			text-align: center;
+	    			a{
+	    				font-size: 1.3em;
+	    				color: $black;
+	    				line-height: 2.6em;
+	    				font-weight: 400;
+	    				&.active{
+	    					color: $RoseQuartz;
+	    				}
+	    				&:hover{
+	    					color: $RoseQuartz;
+	    				}
+	    			}
+    			}
+    		}
+    		.field-container {
+			    @include floatL;
+			    @include positionR;
+			    top: 0.9em;
+			    padding-left: 1em;
+			    border: 0;
+			    width: 25%;
+			    height: 0.8em;
+			    .field {
+				    border: 0;
+				    width: 100%;
+				    height: 100%;
+				    padding: 1em 2em;
+				    background: white;
+				    border-radius: 5px;
+				    box-shadow: 0px 8px 15px rgba(75, 72, 72, 0.1);
+				    @include fieldtranstion;
+				}
+				.icon-container {
+				    @include positionR(absolute);
+				    top: 0.1em;
+				    right: -2.5em;
+				    width: 35px;
+				    height: 35px;
+				    overflow: hidden;
+				    .icon-search {
+					    position: relative;
+					    top: 13px;
+					    left: 10px;
+					    width: 30%;
+					    height: 30%;
+					    opacity: 1;
+					    border-radius: 50%;
+					    border: 3px solid $Serenity;
+					    @include searchtranstion;
+					    &:after{
+					    	content: "";
+						    @include positionR(absolute);
+						    bottom: -10px;
+						    right: -4px;
+						    width: 4px;
+						    border-radius: 4px;
+						    @include rotate(-45deg);
+						    height: 10px;
+						    background-color: $Serenity;
+					    }
+					}
+					.icon-close {
+					    top: 2px;
+					    left: 2px;
+					    width: 75%;
+					    height: 75%;
+					    opacity: 0;
+					    cursor: pointer;
+					    border-radius: 50%;
+					    @include positionR(absolute);
+					    @include translateX(-200%);
+					    @include closetranstion;
+					    .x-up{
+					    	@include positionR;
+						    width: 100%;
+						    height: 50%;
+						    &:before{
+						    	content: "";
+							    @include positionR(absolute);
+							    bottom: 2px;
+							    left: 3px;
+							    width: 50%;
+							    height: 2px;
+							    background-color: $Serenity;
+							    @include rotate(45deg);
+							}
+							&:after{
+								content: "";
+							    @include positionR(absolute);
+							    bottom: 2px;
+							    right: 0px;
+							    width: 50%;
+							    height: 2px;
+							    background-color: $Serenity;
+							    @include rotate(-45deg);
+							}
+					    }
+					    .x-down{
+					    	@include positionR;
+						    width: 100%;
+						    height: 50%;
+						    &:before{
+						    	content: "";
+							    @include positionR(absolute);
+							    top: 5px;
+							    left: 4px;
+							    width: 50%;
+							    height: 2px;
+							    background-color: $Serenity;
+							    @include rotate(-45deg);
+						    }
+						    &:after{
+						    	content: "";
+							    @include positionR(absolute);
+							    top: 5px;
+							    right: 1px;
+							    width: 50%;
+							    height: 2px;
+							    background-color: $Serenity;
+							    @include rotate(45deg);
+						    }
+					    }
+					    &:before{
+					    	content: "";
+						    border-radius: 50%;
+						    @include positionR(absolute);
+						    top: 0;
+						    left: 0;
+						    width: 100%;
+						    height: 100%;
+						    opacity: 0;
+						    border: 2px solid transparent;
+						    border-top-color: $Serenity;
+						    border-left-color: $Serenity;
+						    border-bottom-color: $Serenity;
+						    @include closert;
+					    }	    
+					}
+
+				}
+			}
+			.sign-in{
+				@include positionR;
+			    @include floatL(right);
+			    margin-right: 0em;
+			    margin-top: 2em;
+			}
+	    }
+	    .card {
+		    width: 90%;
+		    border-radius: 10px;
+		    background: white;
+		    height: 30em;
+		    margin: 2em auto;
+		    box-shadow: 0 3px 12px 6px $shadow;
+		    z-index: 2;
+		    @include positionR;
+		}
+    }
+}
+#uploadcard{
+	height: 40em;
+	.panel-static{
+		height: 80%;
+	}
+}
+#button {
+    color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    background: #fff;
+    text-align: center;
+    border: 2px solid transparent;
+    display: inline;
+    margin-left: 1em;
+    a{
+    	color: $black;
+    }
+    &:hover{
+    	 border: 2px solid $Serenity;
+    	 a{
+    	 	color: $Serenity;
+    	 }
+    }
+}
+#gotoval{
+	width: 20px;
+    height: 16px;
+    margin-top: -3px;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+.mainlist {
+    width: 90%;
+    border-radius: 2px;
+    @include positionR;
+    height: auto;
+    margin: 0 auto;
+    overflow:hidden;
+    .aside{
+    	width: 20%;
+    	@include floatL;
+    	box-shadow: 0px 0px 5px 2px $shadow;
+    	.aside-all{
+    		margin: 0;
+    		border:1px solid transparent;
+    		background-color: #fff;
+    		.hd{
+			    padding: 0 28%;
+			    border-bottom: 1px solid #eee;
+			    cursor: default;
+			    h2{
+			    	position: relative;
+				    font-size: 1em;
+				    font-weight: 400;
+				    a{
+				    	color: $RoseQuartz;
+				    }
+			    }
+			}
+			.bd{
+				ul.aside-cList{
+					position: relative;
+					width: 100%;
+					padding:0;
+					margin:0;
+					li{
+						padding: 1em;
+						border-bottom: 1px solid $gary;
+						text-align: center;
+						a{
+							font-size: 1em;
+						}
+					}
+				}
+			}	
+    	}
+    }
+}
+
+.main{
+	@include floatL(right);
+	width: 78%;
+	background-color: #fff;
+	box-shadow: 0px 0px 5px 2px $shadow;
+	.wrap{
+		margin: 0;
+		padding: 0 2em;
+		border-bottom: 1px solid #eee;
+		h2{
+			font-size: 1em;
+			font-weight: 400;
+			color: $RoseQuartz;
+		}
+	}
+	ul.itemlist{
+		width: 95%;
+		margin:1em auto;
+		overflow: hidden;
+		li{
+			width: 30%;
+			height: 15em;
+			background: #eee;
+			@include floatL;
+			margin-right: 1em;
+			margin-bottom: 1em;
+			box-shadow: 0px 0px 5px 2px $shadow;
+			.itembox{
+				width: 100%;
+				height:10em;
+				position: relative;
+				@include floatL;
+				.itemimg{
+					width: 100%;
+					height: 10em;
+				}
+			}
+			.iteminfor{
+				height: 3em;
+				width: 98%;
+				padding: 1em 1%;
+				margin: 0;
+				background-color: #fff;
+				@include floatL;
+				z-index: 10;
+				.iteminfor-h2{
+					margin: 0;
+					padding: 0 1em;
+					font-size: 1em;
+					color: $Serenity;
+					height: 2em;
+					z-index: 20;
+					a{
+						color: $Serenity;
+					}
+				}
+			}
+			.timeandtag{
+				color: $RoseQuartz;
+				font-size: 1em;
+				@include floatL;
+				height: 1.5em;
+				line-height: 1em;
+				width: 100%;
+				dl{
+					width: 40%;
+					@include floatL;
+					padding: 0 1em;
+					margin: 0;
+					dd{
+						margin: 0;
+					}
+				}
+				.itemicon-box{
+					@include floatL(right);
+					margin-right:1em;
+					margin-top:0;
+					a{
+						display: inline-block;
+						height: 1em;
+						margin-left: 3px;
+					}
+				}
+			}
+
+		}
+	}
+	ul.pages{
+		width: 95%;
+		display: block;
+	    border: 0;
+	    text-transform: uppercase;
+	    font-size: 12px;
+	    margin: 1em auto;
+	    padding: 0;
+	    li{
+	    	display: inline-block;
+		    width: 32px;
+		    height: 32px;
+		    border: 0;
+		    margin-left: 5px;
+		    line-height: 30px;
+		    border: 1px solid #fff;
+		    text-align: center;
+		    font-size: 12px;
+		    background: #fff;
+		    color: gray;
+		    border: 1px solid #e4e4e4;
+		    &.pgNext{
+		    	width: 50px;
+		    }
+		    &.pgEmpty{
+		    	border: 1px solid #f0f0f0;
+			    color: #d9d6c3;
+			    width: 50px;
+			    cursor: default;
+		    }
+		    &.pgCurrent{
+		    	background: #35b558;
+			    color: #fff;
+			    border: 1px solid #35B558;
+		    }
+		    &.thpoint{
+		    	border: 0;
+			    cursor: auto;
+			    color: #000;
+			    background: none!important;
+			    margin-top: 3px;
+		    }
+		    &.pagetotal{
+		    	width: 70px;
+		    }
+		    &.pagenow{
+		    	width: 100px;
+		    }
+		    &.go{
+		    	width: 32px;
+			    height: 22px;
+			    line-height: 22px;
+			    margin-top: 6px;
+		    }
+		}
+	}
+}
+
+@import 'sign';
+@import "good";
+footer{
+    @include positionR;
+    margin-bottom: 3em;
+    text-align: center;
+    height: 4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

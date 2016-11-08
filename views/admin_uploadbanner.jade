@@ -1,0 +1,32 @@
+doctype
+html
+	head
+		title #{title}
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/reset.css")
+		link(rel="stylesheet",href="/css/index.css")
+	body
+		div.page
+			header
+				div#logo.logo
+					a(href="/",alt="校园二手kanesir")
+						img(src="/img/logo.png")
+				ul.nav-item
+					li
+						a(href="/admin/bannerlist") 返回
+			div.card#upload
+				div.panel.panel-static
+					div.panel-content.uploadsummary
+						h1.panel-heading.uploadtitle 请您谨慎填写
+						p.panel-copy.uploaddescription 一旦提交不可修改
+					div.panel.panel-sliding
+						div.panel-content
+							h1.panel-heading 添加轮播页
+							form#uploadbanner
+								textarea.input#summary(row="3",cols="30",placeholder="请输入轮播信息")
+								input#imgfile(type="file" name="tmpFile")
+								p 当前只支持jpg、jpeg、gif和png格式的上传，并且只能上传一张
+							button#fileuploader.btn.btn-primary 确认无误，上传
+			footer
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/js/uploadbanner.js")

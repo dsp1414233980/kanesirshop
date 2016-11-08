@@ -1,0 +1,41 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		link(rel="stylesheet",href="/css/login.css")
+	body
+		div.login
+			div.login-title
+				span 欢迎您
+			form
+				div.login-fields
+					div.login-fields-user
+						div.icon
+							img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png")
+						input(type="text",name="username",placeholder="用户名")
+						div.validation
+							img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png")
+					div.login-fields-password
+						div.icon
+							img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png")
+						input(type="password",name="password",placeholder="密码")
+						div.validation
+							img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png")
+					div.login-fields-submit
+						input#login-submit(type="button",value="登录")
+			div#disclaimer.disclaimer
+				p 欢迎登录后台管理系统，如忘记密码，请联系后台管理员
+		div.bg-bubbles
+			li
+			li
+			li
+			li
+			li
+			li
+			li
+			li
+			li
+			li
+		script(src="/lib/jquery/dist/jquery.js")
+		script(src="/js/login.js")
