@@ -10,14 +10,14 @@ const bodyParser = require('body-parser')
 const formidable = require('formidable')
 const form = new formidable.IncomingForm()
 const client  = redis.createClient()
-
+//我现在加了一行注释
 const publicPath = path.join(__dirname, 'public')
 const port = process.env.PORT || 3000
 const index = require('./routes/index')
 const admin = require('./routes/admin')
 const user = require('./routes/user')
 
-
+//我在20行加了一行注释
 const app = express()
 app.listen(port)
 console.log("端口为" + port)
